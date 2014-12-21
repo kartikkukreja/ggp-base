@@ -137,6 +137,11 @@ public abstract class StateMachine
         ;
     }
 
+    public List<Integer> simulate(MachineState state) throws GoalDefinitionException, TransitionDefinitionException, MoveDefinitionException {
+    	int[] depth = new int[1];
+    	return getGoals(performDepthCharge(state, depth));
+    }
+
     // ============================================
     //   Implementations of convenience methods
     // ============================================
