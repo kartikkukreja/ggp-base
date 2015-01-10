@@ -1,3 +1,16 @@
+GGP Base Package extended to include following algorithms and their corresponding players:
+- DFS
+- Iterative Deepening DFS with custom heuristic generation
+- Alpha Beta Search
+- Alpha Beta Search with custom heuristic generation
+- Monte Carlo Tree Search
+
+This project was built as a part of:
+- my college project
+- Coursera GGP course project
+
+The README file for original GGP Base Package contains:
+
 =====================================
 = GENERAL GAME PLAYING BASE PACKAGE =
 =====================================
