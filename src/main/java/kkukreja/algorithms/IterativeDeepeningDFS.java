@@ -45,7 +45,7 @@ public final class IterativeDeepeningDFS {
 					double levelScore = 0.0;
 					Move levelMove = moves.get(0);
 					for (Move move : moves) {
-						double result = minscore(move, state, depth, timeout);
+						double result = maxscore(move, state, depth, timeout);
 						if (result > levelScore) {
 							levelScore = result;
 							levelMove = move;
@@ -84,7 +84,7 @@ public final class IterativeDeepeningDFS {
 		List<Move> moves = theMachine.getLegalMoves(state, role);
 		double bestScore = 0.0;
 		for (Move move : moves) {
-			double score = minscore(move, state, depth, maxclock);
+			double score = maxscore(move, state, depth, maxclock);
 			if (score > bestScore)
 				bestScore = score;
 			if (bestScore >= 100.0)
@@ -94,7 +94,7 @@ public final class IterativeDeepeningDFS {
 		return bestScore;
 	}
 
-	private double minscore(Move move, MachineState state, int depth, long maxclock)
+	private double maxscore(Move move, MachineState state, int depth, long maxclock)
 			throws MoveDefinitionException, TransitionDefinitionException, GoalDefinitionException, TimeLimitExceededException
 	{
 		if (System.currentTimeMillis() > maxclock)
